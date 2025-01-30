@@ -19,3 +19,36 @@ int main(){
 }
 
 //Do not modify source code above this line
+void shuffle(int &a, int &b, int &c, int &d)
+{
+	int x = rand() % 4;
+	int y = rand() % 4;
+	while (x == y)
+	{
+		y = rand() % 4;
+	}
+	if ((x == 0 && y == 1) || (x == 1 && y == 0))
+	{
+		swap(a, b);
+	}
+	else if ((x == 0 && y == 2) || (x == 2 && y == 0))
+	{
+		swap(a, c);
+	}
+	else if ((x == 0 && y == 3) || (x == 3 && y == 0))
+	{
+		swap(a, d);
+	}
+	else if ((x == 1 && y == 2) || (x == 2 && y == 1))
+	{
+		swap(b, c);
+	}
+	else if ((x == 1 && y == 3) || (x == 3 && y == 1))
+	{
+		swap(b, d);
+	}
+	else if ((x == 2 && y == 3) || (x == 3 && y == 2))
+	{
+		swap(c, d);
+	}
+}
